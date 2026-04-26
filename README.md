@@ -26,10 +26,48 @@ I used `rustup doc --book` which opens up the Rust book in a browser window. Thi
 
 Overview on how to install rust, a simple "Hello World", and how to use Cargo
 
+### Projects 
+- hello_world
+  - located in ./projects/hello_world
+- hello_cargo
+  - located in ./projects/hello_cargo
+
+- Book recommends installing from a curl script. Windows has a special method
+- You also need a linker which can be xcode, gcc, clang. 
+- `rustc --version`  should show a version number if installed correctly
+  - If not, check the PATH
+- `rustup update` to update rust
+- `rustup self uninstall` to install
+- `rustup doc` has the local documentation that you can view in a browser offline
+- The book will use dependencies beyond the standard library, which you will need to download. To download ahead of time (for offline build) do the following
+```bash
+cargo new get-dependencies
+cd get-dependencies 
+cargo add rand@0.8.5 trpl@0.2.0
+```
+```
+```
+- Offline builds can be done using the `--offline` flag with all `cargo` commands covered in the book
+- `main` function will always be the first code that runs in every executable Rust program. If there are parameters, it would go inside the parentheses.
+- `rustc main.rs` compiles the rust program starting at `main.rs`
+- Windows compilation would include a `main.exe` and a `main.pdb` instead of an executable `main` as in Linux and Mac
+- `cargo --version` to get the version. If it doesn't work then cargo broke
+- `cargo new hello_cargo` to create a new project named `hello_cargo`
+- `cargo init` to initialize a cargo project in a folder that was already made
+- `cargo build` to build a cargo project 
+  - A `Cargo.lock` file will generate to lock in the exact versions of dependencies that the app uses
+- `cargo run` to build then run the application
+  - easier than `cargo build` then finding the binary
+- `cargo check` to check the code and ensures it compiles without producing an executable. Faster than `cargo build` so helps with testing/debugging
+- cargo will store the binary in target/debug directory
+- `cargo build --release` produces a release build in `target/release`. This build will have optimizations to run faster but won't have debug symbols
+  - benchmarking should be done with a release build though
 
 ## Chapter 2
 
 Project chapter to build up a number-guessing game
+
+Located in ./projects/guessing_game
 
 
 ## Chapter 3
