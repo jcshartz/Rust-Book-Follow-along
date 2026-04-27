@@ -69,6 +69,26 @@ Project chapter to build up a number-guessing game
 
 Located in ./projects/guessing_game
 
+- an associated function is a function that is implemented on a type 
+  - For example, in`String::new()` the function `new` is directly tied to the type `String`
+- The `&` on an argument indicates a reference
+  - which gives you a way to let multiple parts of your code access one piece of data without needing to copy that data into memory multiple times
+  - for example, `&mut guess`
+- `.expect("err msg");` is a method of `Result` and it allows you to have an error message
+  - `Result`'s variants are `Ok` and `Err`
+  - `expect` returns the `Ok` result or crashes the program on `Err` and prints the error message
+- String placeholders are done with encapsulating curly brackets like `"You guessed: {guess};`  
+  - When printing the result of an expression, place empty curly brackets in the format string, then follow the format string with a comma-separated list of expressions to print in each empty curly bracket of the same order. For example:
+```rust
+let x = 5;
+let y = 10;
+
+println!("x = {x}, y + 2 = {}, x + y = {}", y + 2, x + y);
+```
+```
+```
+
+- Some other things were touched. I added notes in the guessing_game main source
 
 ## Chapter 3
 
