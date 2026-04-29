@@ -94,6 +94,19 @@ println!("x = {x}, y + 2 = {}, x + y = {}", y + 2, x + y);
 
 Rust programming features that mirror other programming languages
 
+- Examples in ./projects/variables/
+
+- `mut` is required to make a variable mutable else it can be considered "final" 
+  - Conveys that the variable can be changed
+- `const` also signals that values are bound to a name and are not allowed to change, similar to a `let` variable without `mut`. However, there are a few differences:
+  - You declare constants with `const` rather than `let`
+  - The type of the value must be annotated
+  - Constants can be declared in any scope, including the global scope
+  - Constants may be set only to a constant expression and not to a value that can only be computed at runtime
+    - See the Rust Reference's section on constant evaluation for more information on what operations can be used when declaring constants.
+- Shadows are only valid within the scope of the shadow. Else the name refers to the original declaration scope
+- You can change the type of what is shadowed
+
 ## Chapter 4
 
 Covers Rust ownership system
